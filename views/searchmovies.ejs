@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #181818;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search-bar button {
+            padding: 5px 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #00a310;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-left: 5px;
+        }
+
+        nav {
+            margin-top: 10px;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 5cm;
+            height: 7cm;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        .swiper-slide h2 {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .swiper-slide p {
+            margin: 10px 0;
+            font-size: 0.8rem;
+        }
+
+        .swiper-slide button {
+            padding: 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            background-color: #00a310;
+            color: #fff;
+            border: none;
+            border-radius: 0 0 10px 10px;
+            width: 100%;
+        }
+
+        .swiper-slide button:hover {
+            background-color: #007e0d;
+        }
+
+        .movies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .movie {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .movie img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .movie h2 {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .movie p {
+            font-size: 0.8rem;
+            margin: 5px 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            main {
+                margin-left: 0;
+            }
+
+            .swiper-slide {
+                width: 100%;
+            }
+
+            .movies {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .movie {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Movie</h1>
+        <div class="search-bar">
+            <form action="/search" method="POST">
+                <input type="text" name="searchTerm" id="searchInput" placeholder="Search for a movie..." autocomplete="off">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/category/featured">Featured</a></li>
+            <li><a href="/category/bollywood">Bollywood</a></li>
+            <li><a href="/category/telugu">Telugu</a></li>
+            <li><a href="/category/tamil">Tamil</a></li>
+            <li><a href="/category/malayalam">Malayalam</a></li>
+            <li><a href="/category/hollywood">Hollywood</a></li>
+            <li><a href="/category/other">Other</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Movies</h2>
+        <div class="movies">
+            <div class="movie">
+                <img src="/assets/c2.jpg" alt="Deadpool & Wolverine">
+                <h2>Deadpool & Wolverine</h2>
+                <p>July 26, 2024</p>
+            </div>
+            <div class="movie">
+                <img src="/assets/c1.jpg" alt="The Marvels">
+                <h2>The Marvels</h2>
+                <p>2023</p>
+            </div>
+            <div class="movie">
+                <img src="/assets/c3.jpg" alt="Guardians of the Galaxy Vol. 3">
+                <h2>Guardians of the Galaxy Vol. 3</h2>
+                <p>2023</p>
+            </div>
+            <div class="movie">
+                <img src="/assets/c4.jpg" alt="Ant-Man and The Wasp: Quantumania">
+                <h2>Ant-Man and The Wasp: Quantumania</h2>
+                <p>2023</p>
+            </div>
+            <div class="movie">
+                <img src="/assets/c5.jpg" alt="Black Panther: Wakanda Forever">
+                <h2>Black Panther: Wakanda Forever</h2>
+                <p>2022</p>
+            </div>
+            <div class="movie">
+                <img src="/assets/c6.jpg" alt="Thor: Love and Thunder">
+                <h2>Thor: Love and Thunder</h2>
+                <p>2022</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+</html>

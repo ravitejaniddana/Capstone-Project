@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %> - Movie Details</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        header {
+            background-color: #3a3a3a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+        }
+        header h1 {
+            color: #ff4757;
+            margin: 0;
+        }
+        header select {
+            padding: 5px 10px;
+            font-size: 1em;
+            background-color: #2a2a2a;
+            color: #f0f0f0;
+            border: 1px solid #ff4757;
+            border-radius: 5px;
+        }
+        main {
+            padding: 20px;
+        }
+        main h1 {
+            color: #ff4757;
+            font-size: 2em;
+        }
+        main img {
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: block;
+            margin: 0 auto 20px; 
+        }
+        .poster {
+            width: 200px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            align-items: center;
+            justify-content: center;
+            left: 50px;
+        }
+        main p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        main h2 {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ff4757;
+        }
+        iframe {
+            border: none;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #ff4757;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #ff6b81;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><%= movie.title %></h1>
+            <form action="/movie/<%= movie.id %>" method="GET" >
+                <select name="language" onchange="this.form.submit()">
+                    <% languages.forEach(lang => { %>
+                        <option value="<%= lang.code %>" <%= lang.code === selectedLanguage ? 'selected' : '' %>><%= lang.name %></option>
+                    <% }) %>
+                </select>
+            </form>
+        </header>
+        <main>
+            <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %> poster" class="poster">
+            <p><%= movie.overview %></p>
+            <p>Release Date: <%= movie.release_date %></p>
+            <p>Rating: <%= movie.vote_average %>/10</p>
+            <p>Directed by: <%= movie.director %></p>
+            <p>Language: <%= movie.original_language %></p>
+            <p>Country: <%= movie.production_countries.map(country => country.name).join(', ') %></p>
+            <p>Genres: <%= movie.genres.map(genre => genre.name).join(', ') %></p>
+            <% if (trailer && trailer.key) { %>
+                <h2>Trailer</h2>
+                <iframe width="620" height="315" src="https://www.youtube.com/embed/<%= trailer.key %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <% } else { %>
+                <p>No trailer available.</p>
+            <% } %>
+        </main>
+    </div>
+</body>
+</html>

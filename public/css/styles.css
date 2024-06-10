@@ -1,0 +1,31 @@
+.coming-container {
+    display: grid;
+    gap: 1rem;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.heading {
+    position: relative;
+}
+
+.heading::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px; 
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.coming-container .box img:hover {
+    transform: translateY(0);
+}
+
+.coming-container .box img {
+    border-radius: 15px;
+}

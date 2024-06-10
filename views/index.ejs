@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=locals.title ? title :"Dashboard"%></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/static/index.css">
+
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo"></a>  
+        <i class='bx bxs-movie'>Movies</i>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <!--menu-->
+        <ul class="navbar">
+            <li><a href="#home" class="home-active">Home</a></li>
+           <li><a href="/searchmovies">Search Movies</a></li>
+            <li><a href="#Coming">Coming</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+        <a href="/signup" class="btn">Sign up</a>
+    </header>
+    <!--home-->
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide container">
+                <img src="/assets/home1.jpg" alt="Guardians of the Galaxy Volume 2">
+                <div class="home-text">
+                    <span>Marvel Universe</span>
+                    <h1>Guardians of the Galaxy <br>Volume 2</h1>
+                    <a href="#" class="btn">Download</a>
+                    <a href="#" class="play"><i class='bx bx-play'></i></a>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="/assets/home2.png" alt="Thor: Love and Thunder">
+                <div class="home-text">
+                    <span>Marvel Universe</span>
+                    <h1>Thor:<br>Love and Thunder</h1>
+                    <a href="#" class="btn">Download</a>
+                    <a href="#" class="play"><i class='bx bx-play'></i></a>
+                </div>
+            </div>
+            <div class="swiper-slide container">
+                <img src="/assets/home3.jpg" alt="Spider-man No Way Home">
+                <div class="home-text">
+                    <span>Marvel Universe</span>
+                    <h1>Spider-man <br>No Way Home</h1>
+                    <a href="#" class="btn">Download</a>
+                    <a href="#" class="play"><i class='bx bx-play'></i></a>
+                </div>    
+            </div>
+            <div class="swiper-slide container">
+                <img src="/assets/home4.png" alt="Avengers End Game">
+                <div class="home-text">
+                    <span>Marvel Universe</span>
+                    <h1>Avengers<br>End Game</h1>
+                    <a href="#" class="btn">Download</a>
+                    <a href="#" class="play"><i class='bx bx-play'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+    <!--Movies-->
+    <div class="movies" id="movies">
+        <h2 class="heading">Releasing this week</h2>
+        <div class="movies-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m1.jpg" alt="Strange">
+                </div>
+                <h3>Dr.Strange</h3>
+                <span>120Min | Action</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m2.jpg" alt="Strange">
+                </div>
+                <h3>Patan</h3>
+                <span>120Min | Action</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m3.jpg" alt="Strange">
+                </div>
+                <h3>Batman vs Superman</h3>
+                <span>120Min | Thriller</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m4.jpg" alt="Strange">
+                </div>
+                <h3>Jhon wick 2</h3>
+                <span>120Min | Action</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m5.jpg" alt="Strange">
+                </div>
+                <h3>Aqua Man</h3>
+                <span>120Min | Action</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m6.jpg" alt="Strange">
+                </div>
+                <h3>Black Panther</h3>
+                <span>120Min | Action</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m7.jpg" alt="Strange">
+                </div>
+                <h3>Uncharted</h3>
+                <span>120Min | Action</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m8.jpg" alt="Strange">
+                </div>
+                <h3>Bramasthra</h3>
+                <span>120Min | Action</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m9.jpg" alt="Strange">
+                </div>
+                <h3>Mortal-Engines</h3>
+                <span>120Min | Action</span>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="/assets/m10.jpg" alt="Strange">
+                </div>
+                <h3>UnderWorld Blood Wars</h3>
+                <span>120Min | Action</span>
+            </div>
+        </div>
+    </div>
+    <!--coming movies-->
+    <section class="coming" id="coming">
+        <h2 class="heading">Coming Soon</h2>
+        <!--coming container-->
+        <div class="coming-container swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c1.jpg" alt="Ant-MAn and the Wasp-Qunatumania" >
+                    </div>
+                    <h3>Ant-Man and the Wasp-Quantumania</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c2.jpg" alt="The Flash Movie" >
+                    </div>
+                    <h3>The Flash</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c3.jpg" alt="Guardians of the galaxy Vol.3" >
+                    </div>
+                    <h3>Guardians of the galaxy Vol.3</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c4.jpg" alt="Shazam! Fury of the gods" >
+                    </div>
+                    <h3>Shazam! Fury of the gods</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c5.jpg" alt="Aquaman and the lost Kingdom" >
+                    </div>
+                    <h3>Aquaman and the lost Kingdom</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c6.jpg" alt="John Wich:Chapter 4" >
+                    </div>
+                    <h3>John Wich:Chapter 4</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c7.jpg" alt="Transformers rise of the  breasts" >
+                    </div>
+                    <h3>Transformers rise of the  breasts</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c8.jpg" alt="Mission: Impossible 7" >
+                    </div>
+                    <h3>Mission: Impossible 7</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c9.png" alt="Deadpool 3" >
+                    </div>
+                    <h3>Deadpool 3</h3>
+                </div>
+                <div class="swiper-slide box">
+                    <div class="box-img">
+                        <img src="/assets/c10.jpg" alt="Dune: Part 2" >
+                    </div>
+                    <h3>Dune: Part 2</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--News-->
+    <section class="updates" id="updates">
+      <h2>Subscribe To Get <br>Updates
+      </h2>
+      <form action="/updates" method="post">
+         <input type="email" class="email" name="email" placeholder="Enter Email" required>
+         <input type="submit" value="Subscribe" class="btn">
+      </form>
+    </section>
+   <!--footer-->
+    <section class="footer">
+      <a href="" class="logo">
+         <i class="bx bxs-movie"></i>Movies
+      </a>
+      <div class="social">
+         <a href=" https://www.linkedin.com/in/ravitej-niddana-8932bb261"><i class='bx bxl-linkedin'></i></a>
+         <a href="https://github.com/ravitejaniddana"><i class='bx bxl-github'></i></a>
+         <a href="https://stackoverflow.com/users/23540452/niddana-raviteja"><i class='bx bxl-stack-overflow'></i></a>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      
+      let header= document.querySelector('header');
+      window.addEventListener('scroll', ()=>{
+         header.classList.toggle("shadow", window.scrollY > 0)
+      })
+      let menu = document.querySelector('#menu-icon');
+      let navbar = document.querySelector('.navbar');
+
+      menu.onclick = () =>{
+         menu.classList.toggle('bx-x');
+         navbar.classList.toggle('active');
+      }
+
+        var swiper = new Swiper(".home", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        var swiper = new Swiper(".coming-container", {
+            spaceBetween: 30,
+            loop:true,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            breakpoints:{
+                0:{
+                    slidesPerView: 2,
+                },
+                560: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    slidesPerView: 4,
+                },
+                968: {
+                    slidesPerView: 5,
+                }
+            }
+        });
+    </script>
+</body>
+</html>

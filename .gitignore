@@ -1,2 +1,5 @@
 .vscode/
 node_modules
+key.json
+.git
+package.json
